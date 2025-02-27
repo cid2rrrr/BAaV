@@ -1,0 +1,3 @@
+[submodule "ASDA"]
+	path = ASDA
+	url = https://github.com/swagger-coder/ASDA

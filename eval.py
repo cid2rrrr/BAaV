@@ -58,8 +58,8 @@ def get_arguments():
     parser.add_argument('--wav_path', default='input.wav', type=str, help='Set Wave file')
     parser.add_argument('--resize_mode', default='center_crop', type=str, choices=['letterbox', 'center_crop'],
                         help='Choose resize method: letterbox or center_crop_resize')
-    parser.add_argument('--method', default='ours', type=str, choices=['ours', 'caption', 'classify'],
-                        help='Choose evaluation method: ours, caption, classify')
+    parser.add_argument('--method', default='cross_modal', type=str, choices=['cross_modal', 'caption', 'classify'],
+                        help='Choose evaluation method: cross_modal, caption, classify')
     
     return parser.parse_args()
 

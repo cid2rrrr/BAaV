@@ -48,7 +48,7 @@ The dataset directory should have the following structure:
 
 You can easily run the demo by executing the command below:
 
-    python inference_demo.py --methods ours --img_path input.jpg --wav_path input.wav 
+    python inference_demo.py --methods cross_modal --img_path input.jpg --wav_path input.wav 
 
 ## Citation
 

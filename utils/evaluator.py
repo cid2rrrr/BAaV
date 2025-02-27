@@ -42,7 +42,7 @@ def initialize_models(args, device, method):
         ris_model = Model(clip_model=args.clip_model, tunelang=args.tunelang, num_query=args.num_query, fusion_dim=args.fusion_dim).to(device)
         ris_model = load_pretrain(ris_model, args, None, 1).eval()
 
-    if method == 'ours':
+    if method == 'cross_modal':
         if blip_processor is None:
             blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
         if blip_model is None:
@@ -114,7 +114,7 @@ def evalutate(args, img_path=None, wav_path=None):
 
     img = input_transform(img).to(device)
 
-    if args.method == 'ours':
+    if args.method == 'cross_modal':
         inputs = blip_processor(image, return_tensors="pt").to(device)
         outputs = blip_model.generate(**inputs, max_length=17, repetition_penalty=2.5, early_stopping=True)
         caption = blip_processor.decode(outputs[0], skip_special_tokens=True)
@@ -169,7 +169,7 @@ def evalutate(args, img_path=None, wav_path=None):
 
 
 @torch.no_grad()
-def evaluate_batch(args, img_paths, wav_paths, resize_mode='center_crop', method='ours'):
+def evaluate_batch(args, img_paths, wav_paths, resize_mode='center_crop', method='cross_modal'):
     """다중 배치를 지원하는 평가 함수"""
     global blip_processor, blip_model, clap_model, ris_model, nlp_model
 

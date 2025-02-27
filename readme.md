@@ -1,14 +1,19 @@
-Dummy Projectname
-=========
+<div align="center">
+<h3>Dummy</h3>
 
-This is an official PyTorch implementation of [Dummy Project](about:blank).
+Anonymous<sup>1</sup>, Anonymous*<sup>1</sup>
+
+<sup>1</sup>  Anonymous University
+
+DUMMY 2025 Paper: ([arXiv dummy.dummy](about:blank))
+
+<div align="left">
+
+## Abstract
 
 
-Overall Architectures
----------
+## Preparation
 
-Preparation
----------
 
 ### Environment
 
@@ -38,14 +43,15 @@ The dataset directory should have the following structure:
 
 
 
-Quick Start
----------
+## Quick Start
+
 
 You can easily run the demo by executing the command below:
 
     python inference_demo.py --methods ours --img_path input.jpg --wav_path input.wav 
 
-Citation
----------
+## Citation
+
+If this code is useful for your research, please consider citing:
 
     dummy

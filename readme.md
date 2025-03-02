@@ -21,7 +21,7 @@ DUMMY 2025 Paper: ([arXiv dummy.dummy](about:blank))
     pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2
     pip install -r requirement.txt
 
-### Dataset preprocess for training
+### Dataset preprocess for inference
 
     dummy code
 

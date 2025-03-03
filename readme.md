@@ -24,9 +24,9 @@ DUMMY 2025 Paper: ([arXiv dummy.dummy](about:blank))
 ### Dataset preprocess for inference
 
 You can download the datasets from the links below:
-([VPO dataset]([https://github.com/cyh-0/CAVP]))
-([AVSBench dataset]([https://github.com/OpenNLPLab/AVSBench]))
-([IS3 dataset]([[about:blank](https://github.com/kaistmm/SSLalignment)]))
+[VPO dataset](https://github.com/cyh-0/CAVP)
+[AVSBench dataset](https://github.com/OpenNLPLab/AVSBench)
+[IS3 dataset](https://github.com/kaistmm/SSLalignment)
 
 
     code will be released soon

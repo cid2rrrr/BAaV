@@ -5,7 +5,7 @@ Anonymous<sup>1</sup>, Anonymous*<sup>1</sup>
 
 <sup>1</sup>  Anonymous University
 
-DUMMY 2025 Paper: ([arXiv dummy.dummy](about:blank))
+DUMMY 2025 Paper: [arXiv dummy.dummy](about:blank)
 
 <div align="left">
 
@@ -24,8 +24,11 @@ DUMMY 2025 Paper: ([arXiv dummy.dummy](about:blank))
 ### Dataset preprocess for inference
 
 You can download the datasets from the links below:
+
 [VPO dataset](https://github.com/cyh-0/CAVP)
+
 [AVSBench dataset](https://github.com/OpenNLPLab/AVSBench)
+
 [IS3 dataset](https://github.com/kaistmm/SSLalignment)
 
 

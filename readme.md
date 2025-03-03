@@ -59,6 +59,11 @@ You can easily run the demo by executing the command below:
 
     python inference_demo.py --methods cross_modal --img_path input.jpg --wav_path input.wav 
 
+You can evaluate using the command below:
+
+    python eval.py --methods cross_modal --test_data_path /your/dataset/path/
+
+
 ## Citation
 
 If this code is useful for your research, please consider citing:

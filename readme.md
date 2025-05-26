@@ -3,7 +3,7 @@
 
 Seung-jae Lee, Paul Hongsuck Seo*
 
-  Department of Computer Science and Engineering, Korea University, South Korea
+  Korea University, South Korea
 
 Interspeech 2025 Paper: [arXiv tba.tba](about:blank)
 

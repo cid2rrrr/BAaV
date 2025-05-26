@@ -1,16 +1,17 @@
 <div align="center">
 <h3>Dummy</h3>
 
-Anonymous<sup>1</sup>, Anonymous*<sup>1</sup>
+Seung-jae Lee, Paul Hongsuck Seo*
 
-<sup>1</sup>  Anonymous University
+  Anonymous University
 
-DUMMY 2025 Paper: [arXiv dummy.dummy](about:blank)
+Interspeech 2025 Paper: [arXiv tba.tba](about:blank)
 
 <div align="left">
 
 ## Abstract
 
+Audiovisual segmentation (AVS) aims to identify visual regions corresponding to sound sources, playing a vital role in video understanding, surveillance, and human-computer interaction. Traditional AVS methods depend on large-scale pixel-level annotations, which are costly and time-consuming to obtain. To address this, we propose a novel zero-shot AVS framework that  obviates the need for task-specific supervision by leveraging multiple pretrained models. Our approach integrates audio, vision, and text representations to bridge modality gaps, enabling precise sound source segmentation without AVS-specific annotations. We systematically explore different strategies for connecting pretrained models and evaluate their efficacy across multiple datasets. Experimental results demonstrate that our framework achieves state-of-the-art zero-shot AVS performance, highlighting the effectiveness of multimodal model integration for fine-grained audiovisual segmentation.
 
 ## Preparation
 

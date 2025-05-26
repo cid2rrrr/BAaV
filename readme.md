@@ -1,9 +1,9 @@
 <div align="center">
-<h3>Dummy</h3>
+<h3>Bridging Audio and Vision: Zero-Shot Audiovisual Segmentation by Connecting Pretrained Models</h3>
 
 Seung-jae Lee, Paul Hongsuck Seo*
 
-  Anonymous University
+  Department of Computer Science and Engineering, Korea University, South Korea
 
 Interspeech 2025 Paper: [arXiv tba.tba](about:blank)
 

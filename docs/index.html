@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs">
+  <meta name="keywords" content="ReSCORE, label-free, RAG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png"> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <!-- KaTex -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+  </script>
+  <!-- KaTex -->
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Bridging Audio and Vision: Zero-Shot Audiovisual Segmentation by Connecting Pretrained Models</h1>
+          <div class="is-size-3 publication-authors">
+            <img src="./static/images/interspeech.jpg" alt="Interspeech Logo" style="height: 40px; vertical-align: middle;">
+            <b>Interspeech 2025</b>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://cid2rrrr.github.com/">Seung-jae Lee</a>,</span>
+            <!-- <span class="author-block"><a href="https://github.com/owj0421">Wonjun Oh</a><sup>1,*</sup>,</span> -->
+            <!-- <span class="author-block"><a href="bykimby.github.io">Boyoung Kim</a><sup>1</sup>,</span> -->
+            <!-- <span class="author-block"><a href="https://github.com/EuroMinyoung186">Minyoung Kim</a><sup>1</sup>,</span> -->
+            <!-- <span class="author-block"> -->
+              <!-- <a href="http://www.mathcs.richmond.edu/~jpark/">Joonsuk Park</a><sup>2,3,4,&dagger;</sup>,</span> -->
+            <span class="author-block">
+              <a href="https://phseo.github.io/">Paul Hongsuck Seo</a>,&dagger;</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Korea University, South Korea</span>
+            <!-- <span class="author-block"><sup>2</sup>Naver AI</span>
+            <span class="author-block"><sup>2</sup>Naver Cloud</span>
+            <span class="author-block"><sup>2</sup>University of Richmond</span>
+            <br>
+            <span class="eql-cntrb"><small><sup>*</sup>Equal contribution</small></span>
+            <span class="eql-cntrb"><small><sup>&dagger;</sup>Co-corresponding Authors</small></span> -->
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <a href="https://www.korea.edu/sites/en/index.do" target="_blank">
+              <img src="./static/images/korea_university.png" alt="korea" style="height: 36px;">&nbsp;&nbsp;&nbsp;
+            </a>
+            <a href="https://miil.korea.ac.kr/" target="_blank">
+              <img src="./static/images/MIIL_full_logo.svg" alt="miil" style="height: 36px;">&nbsp;&nbsp;&nbsp;
+            </a>
+            <!-- <a href="https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab" target="_blank">
+              <img src="./static/images/naver_ai.png" alt="naver ai" style="height: 36px;">&nbsp;&nbsp;&nbsp;
+            </a> -->
+            <!-- <a href="https://naver-career.gitbook.io/kr/service/clova" target="_blank">
+              <img src="./static/images/naver_cloud.png" alt="naver cloud" style="height: 36px;">&nbsp;&nbsp;&nbsp;
+            </a> -->
+            <!-- <a href="https://www.richmond.edu/" target="_blank">
+              <img src="./static/images/richmond_university.svg" alt="richmond" style="height: 36px;">&nbsp;&nbsp;&nbsp;
+            </a> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2502.06139"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/cid2rrrr/BAaV"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Audiovisual segmentation (AVS) aims to identify visual regions corresponding to sound sources, playing a vital role in video understanding, surveillance, and human-computer interaction.
+            Traditional AVS methods depend on large-scale pixel-level annotations, which are costly and time-consuming to obtain. To address this, we propose a novel zero-shot AVS framework that eliminates task-specific training by leveraging multiple pretrained models. 
+            Our approach integrates audio, vision, and text representations to bridge modality gaps, enabling precise sound source segmentation without AVS-specific annotations. 
+            We systematically explore different strategies for connecting pretrained models and evaluate their efficacy across multiple datasets. 
+            Experimental results demonstrate that our framework achieves state-of-the-art zero-shot AVS performance, highlighting the effectiveness of multimodal model integration for fine-grained audiovisual segmentation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <img src="./static/images/framework.PNG" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Overview of ReSCORE</b>
+            Overview of the proposed zero-shot AVS approaches.
+            Each subfigure illustrates a strategy for converting audiovisual inputs into textual queries for the RIS model.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <!--<embed src="./static/pdf/result1.pdf" type="./static/images/result1.pdf" width="100%" height="600px"/> -->
+        <div style="text-align: center;">
+          <img src="./static/images/result.PNG" class="center" style="width: 90%;" />
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <b>Performance comparison with state-of-the-art unsupervised AVS method under a zero-shot setting</b>
+            Our approach outperforms prior methods without requiring additional training.
+          </p>
+        </div>
+         <img src="./static/images/output2.png" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Qualitative comparisons of segmentation results across dataset</b>
+            Our method produces fine-grained masks for sounding objects,
+            outperforming prior methods in visual accuracy and boundary alignment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>lorem-ipsum
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

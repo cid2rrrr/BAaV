@@ -5,7 +5,7 @@ Seung-jae Lee, Paul Hongsuck Seo*
 
   Korea University, South Korea
 
-Interspeech 2025 Paper: [arXiv tba.tba](about:blank)
+Interspeech 2025 Paper: [arXiv 2506.06537](https://arxiv.org/abs/2506.06537)
 
 <div align="left">
 

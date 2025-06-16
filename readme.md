@@ -70,8 +70,8 @@ You can evaluate using the command below:
 If this code is useful for your research, please consider citing:
 
     @article{lee2025bridging,
-    title={Bridging Audio and Vision: Zero-Shot Audiovisual Segmentation by Connecting Pretrained Models},
-    author={Lee, Seung-jae and Seo, Paul Hongsuck},
-    journal={arXiv preprint arXiv:2506.06537},
-    year={2025}
+      title={Bridging Audio and Vision: Zero-Shot Audiovisual Segmentation by Connecting Pretrained Models},
+      author={Lee, Seung-jae and Seo, Paul Hongsuck},
+      journal={arXiv preprint arXiv:2506.06537},
+      year={2025}
     }
